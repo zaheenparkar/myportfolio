@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 5%;
+    --foreground: 230 50% 97%;
+    --card: 220 25% 8%;
+    --card-foreground: 230 50% 97%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 230 50% 97%;
+    --primary: 227 100% 65%;
+    --primary-foreground: 230 50% 97%;
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 230 50% 97%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 227 25% 75%;
+    --accent: 227 100% 65%;
+    --accent-foreground: 230 50% 97%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 227 100% 65%;
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    background-color: #0B0F17;
+    color: #F5F7FF;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+@layer components {
+  .text-primary-light {
+    color: #F5F7FF;
+  }
+  
+  .text-secondary-light {
+    color: #A6B2D6;
+  }
+  
+  .bg-primary-dark {
+    background-color: #0B0F17;
+  }
+  
+  .bg-secondary-dark {
+    background-color: #121A25;
+  }
+  
+  .accent-color {
+    color: #4B6CFF;
+  }
+  
+  .accent-bg {
+    background-color: #4B6CFF;
+  }
+  
+  .hairline {
+    background-color: rgba(245, 247, 255, 0.14);
+  }
+  
+  .accent-line {
+    background-color: rgba(75, 108, 255, 0.55);
+  }
+  
+  .grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+  
+  .blueprint-grid {
+    background-image: 
+      linear-gradient(rgba(75, 108, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(75, 108, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .section-pinned {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-[#4B6CFF] text-white font-medium transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply -translate-y-0.5;
+    background-color: #3a5aee;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 border border-[rgba(245,247,255,0.3)] text-white font-medium transition-all duration-300;
+  }
+  
+  .btn-secondary:hover {
+    @apply -translate-y-0.5 border-[#4B6CFF];
+  }
+  
+  .link-accent {
+    @apply text-[#4B6CFF] font-medium inline-flex items-center gap-2 transition-all duration-300;
+  }
+  
+  .link-accent:hover {
+    @apply gap-3;
+  }
+  
+  .label-mono {
+    @apply font-mono text-xs uppercase tracking-[0.12em] text-[#A6B2D6];
+  }
+  
+  .card-border {
+    @apply border border-[rgba(245,247,255,0.14)];
+  }
+  
+  .image-grade {
+    filter: saturate(0.3) contrast(1.1);
+  }
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(75, 108, 255, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 108, 255, 0.6);
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(75, 108, 255, 0.3);
+  color: #F5F7FF;
+}
