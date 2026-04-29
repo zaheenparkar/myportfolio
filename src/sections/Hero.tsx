@@ -123,7 +123,7 @@ export default function Hero() {
                   Get In Touch
                 </button>
                 <a 
-                  href="/Zaheen_Parkar_Resume.pdf"
+                  href={`${import.meta.env.BASE_URL}Zaheen_Parkar_Resume.pdf`}
                   download
                   className="btn-secondary flex items-center gap-2 w-full sm:w-auto justify-center"
                 >
@@ -154,7 +154,7 @@ export default function Hero() {
                 {/* Portrait */}
                 <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
                   <img 
-                    src="/zaheen-portrait.png" 
+                    src={`${import.meta.env.BASE_URL}zaheen-portrait.png`} 
                     alt="Zaheen Parkar" 
                     className="w-full h-full object-cover object-top"
                   />

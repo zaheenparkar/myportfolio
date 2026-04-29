@@ -110,7 +110,7 @@ export default function Contact() {
             {/* Download Resume */}
             <div className="pt-4">
               <a 
-                href="/Zaheen_Parkar_Resume.pdf"
+                href={`${import.meta.env.BASE_URL}Zaheen_Parkar_Resume.pdf`}
                 download
                 className="flex items-center justify-center gap-2 w-full p-4 bg-white rounded-xl border border-gray-100 hover:border-indigo-300 hover:shadow-md transition-all duration-300"
               >
