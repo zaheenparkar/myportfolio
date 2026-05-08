@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { 
   Workflow, 
   Wrench, 
@@ -7,7 +7,8 @@ import {
   Database,
   Cloud,
   CheckCircle2,
-  ChevronDown
+  ChevronDown,
+  Sparkles
 } from 'lucide-react';
 
 const skillCategories = [
@@ -19,12 +20,13 @@ const skillCategories = [
     skills: [
       'Agile & Scrum (CSM® Certified)',
       'Waterfall & Hybrid Models',
-      'PMP Frameworks',
+      'PMP-Aligned Frameworks',
       'Sprint Planning & Backlog Grooming',
       'Risk Assessment & Mitigation',
       'Budget Planning & Forecasting',
       'Resource Allocation',
       'Stakeholder Management',
+      'Global Project Demand Management',
     ],
   },
   {
@@ -41,6 +43,7 @@ const skillCategories = [
       'Postman & API Testing',
       'Swagger Documentation',
       'Chrome DevTools Debugging',
+      'SDLC & Release Governance',
     ],
   },
   {
@@ -57,6 +60,7 @@ const skillCategories = [
       'Middleware & API Gateways',
       'CDP Platforms',
       'Data Lake Ecosystems',
+      'Microservices Architecture',
     ],
   },
   {
@@ -76,6 +80,22 @@ const skillCategories = [
     ],
   },
   {
+    id: 'generative-ai',
+    title: 'Generative AI',
+    icon: Sparkles,
+    description: 'AI-powered productivity and automation',
+    skills: [
+      'ChatGPT for Project Planning',
+      'Gemini for Documentation',
+      'Claude for Analysis',
+      'AI-Assisted User Story Creation',
+      'Automated Test Case Generation',
+      'Data-Driven Decision Making',
+      'Workflow Automation',
+      'AI-Enhanced Requirement Analysis',
+    ],
+  },
+  {
     id: 'tools',
     title: 'Tools & Platforms',
     icon: Wrench,
@@ -84,8 +104,9 @@ const skillCategories = [
       'Jira & Confluence',
       'ClickUp & Trello',
       'Zoho Suite',
-      'Microsoft Office Suite',
+      'Asana & Basecamp',
       'Slack & Teams',
+      'Microsoft Office Suite',
       'Git & GitHub',
       'Figma (Basic)',
       'Draw.io & Lucidchart',
@@ -105,6 +126,7 @@ const skillCategories = [
       'Wireframes & Mockups',
       'Acceptance Criteria',
       'API Documentation',
+      'Product Vision & Roadmaps',
     ],
   },
 ];
@@ -114,6 +136,7 @@ const domains = [
   'FinTech',
   'SaaS Platforms',
   'E-commerce',
+  'Warehouse Management',
   'EdTech',
   'HealthTech',
   'Digital Publishing',
@@ -121,20 +144,16 @@ const domains = [
 ];
 
 export default function Skills() {
-  const sectionRef = useRef<HTMLElement>(null);
   const [expandedCategory, setExpandedCategory] = useState<string | null>('project-management');
 
   return (
     <section 
-      ref={sectionRef} 
       id="skills"
-      className="relative w-full py-20 lg:py-32 bg-gray-50"
+      className="relative w-full py-20 lg:py-32 bg-white"
     >
-      {/* Blueprint grid background */}
       <div className="absolute inset-0 blueprint-grid opacity-30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Section Header */}
         <div className="reveal text-center mb-16">
           <p className="label-mono mb-4">Expertise</p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -142,11 +161,10 @@ export default function Skills() {
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             A comprehensive skill set spanning project management, technical delivery, 
-            and system integration across enterprise domains.
+            Generative AI, and system integration across enterprise domains.
           </p>
         </div>
 
-        {/* Domains */}
         <div className="reveal mb-12">
           <p className="label-mono mb-4 text-center">Industry Domains</p>
           <div className="flex flex-wrap justify-center gap-2">
@@ -161,7 +179,6 @@ export default function Skills() {
           </div>
         </div>
 
-        {/* Skills Accordion */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {skillCategories.map((category) => {
             const Icon = category.icon;
@@ -177,7 +194,6 @@ export default function Skills() {
                     isExpanded ? 'border-indigo-300 shadow-md' : 'border-gray-200 shadow-sm'
                   }`}
                 >
-                  {/* Header */}
                   <button
                     onClick={() => setExpandedCategory(isExpanded ? null : category.id)}
                     className="w-full p-5 flex items-center justify-between hover:bg-gray-50 transition-colors"
@@ -198,8 +214,7 @@ export default function Skills() {
                     />
                   </button>
 
-                  {/* Content */}
-                  <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-[500px]' : 'max-h-0'}`}>
+                  <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-[600px]' : 'max-h-0'}`}>
                     <div className="px-5 pb-5">
                       <div className="pt-2 border-t border-gray-100">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-4">
@@ -222,7 +237,6 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Certifications */}
         <div className="reveal mt-16">
           <p className="label-mono mb-6 text-center">Certifications</p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -243,6 +257,30 @@ export default function Skills() {
                 <div>
                   <p className="text-gray-900 text-sm font-medium">{cert.name}</p>
                   <p className="text-gray-500 text-xs">{cert.org}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Academic Qualifications */}
+        <div className="reveal mt-12">
+          <p className="label-mono mb-6 text-center">Academic Qualifications</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {[
+              { degree: 'Bachelor of Science Information Technology', institution: 'Kalinga University', year: '2015 — 2018' },
+              { degree: 'Aircraft Maintenance Engineer Course', institution: 'Indian Aerospace and Engineering', year: '2007 — 2011' },
+            ].map((edu) => (
+              <div 
+                key={edu.degree}
+                className="flex items-center gap-3 px-5 py-3 bg-white rounded-xl shadow-sm border border-gray-100"
+              >
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                  <CheckCircle2 className="w-4 h-4 text-indigo-600" />
+                </div>
+                <div>
+                  <p className="text-gray-900 text-sm font-medium">{edu.degree}</p>
+                  <p className="text-gray-500 text-xs">{edu.institution} · {edu.year}</p>
                 </div>
               </div>
             ))}

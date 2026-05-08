@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -7,7 +7,8 @@ import {
   ShoppingBag,
   Brain,
   Building2,
-  GraduationCap
+  GraduationCap,
+  Warehouse
 } from 'lucide-react';
 
 const projects = [
@@ -26,17 +27,18 @@ const projects = [
       'Insta Returns — Seamless instant return process',
       'Last Mile Delivery — Optimized delivery routing',
       'Omni Channel Store Fulfillment — Unified inventory across channels',
+      'Automated Billing & GST-Compliant Invoice Generation — Real-time invoicing integrated with payment gateways',
     ],
     achievements: [
       'Led cross-functional teams (backend, frontend, mobile, QA, infrastructure)',
       'Managed full SDLC from ideation to optimization and scaling',
       'Built cloud-native scalable infrastructure for exponential growth',
+      'Implemented automated billing and GST-compliant invoice generation for e-commerce transactions',
+      'Leveraged Generative AI tools to accelerate documentation and improve delivery efficiency by ~30%',
       'Managed vendor relationships and legal/compliance alignment',
-      'Defined technical roadmap ensuring product scalability and performance',
     ],
-    technologies: ['Cloud Native', 'Mobile Apps', 'Node.js', 'React', 'AWS', 'Microservices'],
+    technologies: ['Cloud Native', 'Mobile Apps', 'Node.js', 'React', 'AWS', 'GST Billing', 'Microservices'],
     color: 'from-pink-100 to-purple-100',
-    borderColor: 'border-pink-200',
   },
   {
     id: 'los',
@@ -44,52 +46,77 @@ const projects = [
     subtitle: 'Loan Origination & Risk Analytics System',
     category: 'FinTech',
     icon: Building2,
-    company: 'Mathcoms LLC',
-    period: 'May 2025 — Nov 2025',
-    role: 'Technical Project Manager',
-    overview: 'Enterprise banking platform for loan origination, risk analytics, asset classification, and provisioning solutions. Delivered compliant, audit-ready systems with complex integrations.',
+    company: 'D2K Technologies Pvt. Ltd.',
+    period: 'May 2025 — Dec 2025',
+    role: 'Project Manager',
+    overview: 'Enterprise banking platform for loan origination, risk analytics, asset classification, and provisioning solutions for banking clients in UAE and India.',
     features: [
       'Loan Origination System (LOS) — End-to-end loan processing',
-      'Risk Analytics — Real-time risk assessment and scoring',
+      'Risk Analytics Platform — Real-time risk assessment and scoring',
       'Asset Classification — Automated asset categorization',
       'Provisioning Solutions — Regulatory compliance reporting',
     ],
     achievements: [
-      'Owned technical project execution from requirements to production',
+      'Owned project execution from requirements to production',
       'Coordinated API-based integrations and ETL processes',
       'Created comprehensive BRD, FRD, SRS, and data mapping documentation',
       'Led UAT planning, defect triaging, and PWT sessions',
+      'Leveraged Generative AI tools to accelerate requirement documentation and improve delivery efficiency by ~30%',
       'Ensured compliance-aligned delivery for audit requirements',
     ],
-    technologies: ['Banking APIs', 'ETL', 'Risk Engines', 'SQL', 'Middleware', 'UAT'],
+    technologies: ['Banking APIs', 'ETL', 'Risk Engines', 'SQL', 'Middleware', 'Generative AI', 'UAT'],
     color: 'from-blue-100 to-cyan-100',
-    borderColor: 'border-blue-200',
   },
   {
     id: 'pmiq',
     title: 'PM-IQ',
-    subtitle: 'AI-Enabled Project Management Tool',
+    subtitle: 'AI-Enabled Project Management Platform',
     category: 'SaaS / AI',
     icon: Brain,
-    company: 'Mathcoms LLC',
-    period: 'May 2025 — Nov 2025',
-    role: 'Technical Project Manager',
-    overview: 'An intelligent project management platform leveraging AI/ML to automate workflows, predict timelines, and enhance team productivity.',
+    company: 'Mathcoms LLC (USA) — Freelance',
+    period: 'Ongoing',
+    role: 'Freelance Project / Product Manager',
+    overview: 'An AI-driven project management platform focused on automation workflows, data-driven insights, and intelligent process optimization.',
     features: [
       'AI-Powered Task Automation — Smart task assignment and tracking',
       'Predictive Analytics — Timeline and risk predictions',
       'Natural Language Processing — Conversational project queries',
       'Integration Hub — API/SDK connectivity with popular tools',
+      'Automation Logic — Intelligent process optimization',
     ],
     achievements: [
-      'Defined BRDs, SRS, user flows, and automation workflows',
-      'Coordinated with AI/ML engineers, UI/UX, and backend teams',
-      'Facilitated Agile ceremonies and sprint planning using Jira',
-      'Oversaw API/SDK integrations and data-driven feature enhancements',
+      'Defined product vision, BRDs, SRS, user journeys, and automation logic',
+      'Collaborated with Architects, AI/ML engineers, backend developers, and UI/UX teams',
+      'Managed Agile delivery lifecycle including sprint planning and backlog prioritization',
+      'Oversaw API integrations, data workflows, and system enhancements',
+      'Drove product improvements through iterative releases focusing on performance and usability',
     ],
-    technologies: ['AI/ML', 'NLP', 'Python', 'React', 'Node.js', 'REST APIs'],
+    technologies: ['AI/ML', 'NLP', 'Python', 'React', 'Node.js', 'REST APIs', 'Automation'],
     color: 'from-violet-100 to-indigo-100',
-    borderColor: 'border-violet-200',
+  },
+  {
+    id: 'dookaans',
+    title: 'Dookaans',
+    subtitle: 'Inventory Management System',
+    category: 'Warehouse Management',
+    icon: Warehouse,
+    company: 'Kapiz Innovators Pvt Ltd',
+    period: '2024',
+    role: 'Technical Project Manager & Director',
+    overview: 'An inventory management system designed to improve inventory tracking, warehouse management, reporting, and operational efficiency.',
+    features: [
+      'Inventory Tracking — Real-time stock monitoring and alerts',
+      'Warehouse Management — Optimized storage and retrieval workflows',
+      'Reporting Dashboard — Analytics and performance insights',
+      'Operational Efficiency — Streamlined processes and automation',
+    ],
+    achievements: [
+      'Developed system to improve inventory tracking and warehouse operations',
+      'Implemented reporting modules for data-driven decision making',
+      'Enhanced operational efficiency through process automation',
+    ],
+    technologies: ['Warehouse Mgmt', 'Node.js', 'React', 'Cloud', 'Analytics'],
+    color: 'from-amber-100 to-yellow-100',
   },
   {
     id: 'zanichelli',
@@ -115,7 +142,6 @@ const projects = [
     ],
     technologies: ['PWA', 'AI/ML', 'Angular', 'Node.js', 'MongoDB', 'LTI'],
     color: 'from-green-100 to-emerald-100',
-    borderColor: 'border-green-200',
   },
   {
     id: 'enterprise-saas',
@@ -141,7 +167,6 @@ const projects = [
     ],
     technologies: ['SaaS', 'PaaS', 'SSO', 'SAML', 'OAuth', 'ETL', 'Microservices'],
     color: 'from-orange-100 to-amber-100',
-    borderColor: 'border-orange-200',
   },
   {
     id: 'angular-dashboards',
@@ -166,25 +191,20 @@ const projects = [
     ],
     technologies: ['Angular 15+', 'TypeScript', 'RxJS', 'REST APIs', 'Sass', 'Bootstrap'],
     color: 'from-red-100 to-rose-100',
-    borderColor: 'border-red-200',
   },
 ];
 
 export default function Projects() {
-  const sectionRef = useRef<HTMLElement>(null);
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
 
   return (
     <section 
-      ref={sectionRef} 
       id="projects"
       className="relative w-full py-20 lg:py-32 bg-gray-50"
     >
-      {/* Blueprint grid background */}
       <div className="absolute inset-0 blueprint-grid opacity-30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Section Header */}
         <div className="reveal text-center mb-16">
           <p className="label-mono mb-4">Portfolio</p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -192,11 +212,10 @@ export default function Projects() {
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             A selection of enterprise platforms, SaaS products, and system integrations 
-            I've delivered across FinTech, E-commerce, and EdTech domains.
+            I've delivered across FinTech, E-commerce, Warehouse Management, and EdTech domains.
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((project) => {
             const Icon = project.icon;
@@ -207,14 +226,12 @@ export default function Projects() {
                 key={project.id}
                 className="reveal group relative bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-indigo-200 transition-all duration-300"
               >
-                {/* Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                 <div className="relative p-6 lg:p-8">
-                  {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className={`w-12 h-12 rounded-xl accent-bg flex items-center justify-center shadow-md`}>
+                      <div className="w-12 h-12 rounded-xl accent-bg flex items-center justify-center shadow-md">
                         <Icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -228,21 +245,17 @@ export default function Projects() {
 
                   <p className="text-gray-500 text-sm mb-2">{project.subtitle}</p>
 
-                  {/* Meta */}
                   <div className="flex flex-wrap items-center gap-3 mb-4 text-xs text-gray-500">
                     <span>{project.company}</span>
                     <span className="w-1 h-1 rounded-full bg-gray-300" />
                     <span>{project.period}</span>
                   </div>
 
-                  {/* Overview */}
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                     {project.overview}
                   </p>
 
-                  {/* Expandable Content */}
                   <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-[800px]' : 'max-h-0'}`}>
-                    {/* Features */}
                     <div className="mb-4">
                       <p className="label-mono text-xs mb-2">Key Features</p>
                       <ul className="space-y-1.5">
@@ -255,7 +268,6 @@ export default function Projects() {
                       </ul>
                     </div>
 
-                    {/* Achievements */}
                     <div className="mb-4">
                       <p className="label-mono text-xs mb-2">Achievements</p>
                       <ul className="space-y-1.5">
@@ -269,7 +281,6 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech) => (
                       <span 
@@ -281,7 +292,6 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  {/* Actions */}
                   <div className="flex items-center gap-4">
                     <button 
                       onClick={() => setExpandedProject(isExpanded ? null : project.id)}

@@ -9,7 +9,6 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Auto-play entrance animation on page load
       const loadTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
       loadTl
@@ -101,7 +100,7 @@ export default function Hero() {
                 style={{ opacity: 0 }}
               >
                 11+ years delivering enterprise platforms, cloud solutions, and SaaS products 
-                across FinTech, E-commerce, and Digital Learning domains.
+                across FinTech, E-commerce, Warehouse Management, and Digital Learning domains.
               </p>
 
               <div 
@@ -123,7 +122,7 @@ export default function Hero() {
                   Get In Touch
                 </button>
                 <a 
-                  href={`${import.meta.env.BASE_URL}Zaheen_Parkar_Resume.pdf`}
+                  href="/Zaheen_Parkar_Resume.pdf"
                   download
                   className="btn-secondary flex items-center gap-2 w-full sm:w-auto justify-center"
                 >
@@ -136,7 +135,7 @@ export default function Hero() {
                 className="hero-text font-mono text-xs text-gray-500 tracking-wide mt-8"
                 style={{ opacity: 0 }}
               >
-                Based in Dubai · Delivering globally · CSM® · ITIL
+                Based in Dubai · Delivering globally · CSM® · ITIL · Generative AI
               </p>
             </div>
 
@@ -154,9 +153,10 @@ export default function Hero() {
                 {/* Portrait */}
                 <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
                   <img 
-                    src={`${import.meta.env.BASE_URL}zaheen-portrait.png`} 
+                    src="/zaheen-portrait.png" 
                     alt="Zaheen Parkar" 
                     className="w-full h-full object-cover object-top"
+                    style={{ filter: 'contrast(1.05)' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent" />
                 </div>

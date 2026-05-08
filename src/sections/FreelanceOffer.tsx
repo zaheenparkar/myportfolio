@@ -88,7 +88,7 @@ export default function FreelanceOffer() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a 
-                href={`${import.meta.env.BASE_URL}Zaheen_Parkar_Resume.pdf`}
+                href="/Zaheen_Parkar_Resume.pdf"
                 download
                 className="btn-secondary flex items-center justify-center gap-2"
               >

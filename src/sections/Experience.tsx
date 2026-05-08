@@ -1,36 +1,38 @@
-import { useRef } from 'react';
 import { Briefcase, Calendar, MapPin, ChevronRight } from 'lucide-react';
 
 const experiences = [
   {
-    company: 'Mathcoms LLC',
-    role: 'Technical Project Manager',
-    period: 'May 2025 — Nov 2025',
-    location: 'Dubai, UAE',
-    description: 'Led end-to-end delivery of enterprise FinTech platforms including Loan Origination Systems (LOS), risk analytics, asset classification, and provisioning solutions for banking clients.',
+    company: 'D2K Technologies Pvt. Ltd. (A Group ICRA Company)',
+    role: 'Project Manager',
+    period: 'May 2025 — Dec 2025',
+    location: 'Dubai, UAE / India',
+    description: 'Led end-to-end delivery of enterprise FinTech platforms including Loan Origination Systems (LOS), risk analytics platform (asset classification and provisioning) solutions for banking clients in UAE and India.',
     achievements: [
-      'Owned technical project execution across requirements finalization, system design, development tracking, UAT, and production releases',
-      'Coordinated API-based integrations, ETL processes, and middleware connectivity',
-      'Created BRD, FRD, SRS, data mapping sheets, and solution documentation',
+      'Owned project execution across requirements finalization, system design, development tracking, UAT, and production releases',
+      'Leveraged Generative AI tools (ChatGPT, Gemini) to accelerate requirement documentation, user story creation, and test case generation, improving delivery efficiency by ~30%',
+      'Coordinated API-based integrations, ETL processes, and middleware connectivity between internal banking systems and external platforms',
+      'Created BRD, FRD, SRS, data mapping sheets, and solution documentation ensuring clear functional specifications',
       'Led UAT planning, defect triaging, and PWT sessions for business readiness',
-      'Also led PM-IQ (AI-enabled Project Management tool) delivery with AI/ML engineers',
+      'Facilitated Agile ceremonies, sprint planning, backlog grooming, and release tracking using Jira and Confluence',
+      'Oversaw API/SDK integrations, automation logic, and data-driven feature enhancements',
     ],
-    technologies: ['FinTech', 'LOS', 'API', 'ETL', 'AI/ML', 'Jira', 'Confluence'],
+    technologies: ['FinTech', 'LOS', 'API', 'ETL', 'Generative AI', 'Jira', 'Confluence'],
   },
   {
     company: 'Kapiz Innovators Pvt Ltd',
     role: 'Technical Project Manager & Director',
     period: 'Feb 2024 — May 2025',
     location: 'India',
-    description: 'Spearheaded development and deployment of FashQuik, a quick-commerce fashion delivery platform with innovative features.',
+    description: 'Spearheaded the development and successful deployment of FashQuik, a quick-commerce fashion delivery platform with innovative features that set it apart from competitors.',
     achievements: [
       'Designed Try & Buy, Insta Returns, Last Mile Delivery, and Omni Channel Store Fulfillment',
-      'Led cross-functional teams (backend, frontend, mobile, QA, infrastructure)',
+      'Leveraged Generative AI tools (ChatGPT, Gemini) to accelerate requirement documentation, user story creation, and test case generation, improving delivery efficiency by ~30%',
+      'Led implementation of automated billing and GST-compliant invoice generation for e-commerce transactions, enabling real-time invoice creation and integration with payment gateways and accounting workflows',
+      'Led cross-functional teams (backend, frontend, mobile, QA, infrastructure) ensuring on-time delivery',
       'Built cloud-native scalable infrastructure for exponential growth',
-      'Managed full SDLC from ideation to optimization and scaling',
       'Managed vendor relationships and legal/compliance alignment',
     ],
-    technologies: ['Quick Commerce', 'Cloud Native', 'Mobile Apps', 'Vendor Management'],
+    technologies: ['Quick Commerce', 'Cloud Native', 'Mobile Apps', 'GST Billing', 'Generative AI'],
   },
   {
     company: 'Hurix Systems Pvt. Ltd',
@@ -48,6 +50,20 @@ const experiences = [
     technologies: ['SaaS', 'PaaS', 'SSO', 'LTI', 'SAML', 'ETL', 'Agile'],
   },
   {
+    company: 'Mathcoms LLC (USA)',
+    role: 'Freelance Project / Product Manager',
+    period: 'Ongoing',
+    location: 'Remote',
+    description: 'Led end-to-end delivery of PMIQ, an AI-driven platform focused on automation workflows, data-driven insights, and intelligent process optimization.',
+    achievements: [
+      'Defined product vision, BRDs, SRS, user journeys, and automation logic aligning business requirements with technical implementation',
+      'Collaborated with Architects, AI/ML engineers, backend developers, and UI/UX teams',
+      'Managed Agile delivery lifecycle including sprint planning, backlog prioritization, and release tracking',
+      'Oversaw API integrations, data workflows, and system enhancements ensuring seamless platform functionality',
+    ],
+    technologies: ['AI/ML', 'Product Management', 'Agile', 'Jira', 'API Integration'],
+  },
+  {
     company: 'WhiteHat Education Pvt Ltd',
     role: 'Technical Support Engineer',
     period: 'May 2020 — Mar 2021',
@@ -58,7 +74,7 @@ const experiences = [
   },
   {
     company: 'Azuma Hospitality LLP',
-    role: 'IT Officer / Engineer',
+    role: 'IT Engineer',
     period: 'Jul 2018 — Jan 2020',
     location: 'UAE',
     description: 'Managed IT infrastructure and systems for hospitality operations.',
@@ -86,16 +102,12 @@ const experiences = [
 ];
 
 export default function Experience() {
-  const sectionRef = useRef<HTMLElement>(null);
-
   return (
     <section 
-      ref={sectionRef} 
       id="experience"
       className="relative w-full py-20 lg:py-32 bg-white"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Section Header */}
         <div className="reveal text-center mb-16">
           <p className="label-mono mb-4">Career Journey</p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -106,12 +118,9 @@ export default function Experience() {
           </p>
         </div>
 
-        {/* Timeline */}
         <div className="relative">
-          {/* Timeline Line - Desktop */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 -translate-x-1/2" />
 
-          {/* Experience Cards */}
           <div className="space-y-12 lg:space-y-0">
             {experiences.map((exp, index) => {
               const isLeft = index % 2 === 0;
@@ -124,19 +133,16 @@ export default function Experience() {
                     index > 0 ? 'lg:mt-12' : ''
                   }`}
                 >
-                  {/* Timeline Dot - Desktop */}
                   <div className="hidden lg:flex absolute left-1/2 top-0 -translate-x-1/2 z-10">
                     <div className="w-4 h-4 rounded-full accent-bg border-4 border-white shadow-md" />
                   </div>
 
-                  {/* Content */}
                   <div 
                     className={`${
                       isLeft ? 'lg:pr-12 lg:text-right' : 'lg:col-start-2 lg:pl-12'
                     }`}
                   >
                     <div className="p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-indigo-200 transition-all duration-300">
-                      {/* Header */}
                       <div className={`flex flex-col ${isLeft ? 'lg:items-end' : 'lg:items-start'} mb-4`}>
                         <div className={`flex items-center gap-2 mb-2 ${isLeft ? 'lg:flex-row-reverse' : ''}`}>
                           <Briefcase className="w-4 h-4 text-indigo-500" />
@@ -157,12 +163,10 @@ export default function Experience() {
                         </div>
                       </div>
 
-                      {/* Description */}
                       <p className="text-gray-600 text-sm mb-4">
                         {exp.description}
                       </p>
 
-                      {/* Achievements */}
                       {hasDetails && (
                         <ul className={`space-y-2 mb-4 ${isLeft ? 'lg:text-right' : ''}`}>
                           {exp.achievements.map((achievement, i) => (
@@ -177,7 +181,6 @@ export default function Experience() {
                         </ul>
                       )}
 
-                      {/* Technologies */}
                       {exp.technologies.length > 0 && (
                         <div className={`flex flex-wrap gap-2 ${isLeft ? 'lg:justify-end' : ''}`}>
                           {exp.technologies.map((tech) => (

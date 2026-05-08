@@ -92,7 +92,7 @@ export default function Navigation() {
               </a>
             ))}
             <a 
-              href={`${import.meta.env.BASE_URL}Zaheen_Parkar_Resume.pdf`}
+              href="/Zaheen_Parkar_Resume.pdf"
               download
               className="ml-4 btn-primary text-sm flex items-center gap-2"
             >
@@ -138,7 +138,7 @@ export default function Navigation() {
             </a>
           ))}
           <a 
-            href={`${import.meta.env.BASE_URL}Zaheen_Parkar_Resume.pdf`}
+            href="/Zaheen_Parkar_Resume.pdf"
             download
             onClick={() => setIsMobileMenuOpen(false)}
             className="btn-primary mt-6 flex items-center gap-2"

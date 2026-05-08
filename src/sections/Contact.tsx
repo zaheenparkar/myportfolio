@@ -1,10 +1,6 @@
-import { useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useState } from 'react';
 import { Mail, Linkedin, Phone, MapPin, Send, Download } from 'lucide-react';
 import { toast } from 'sonner';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const contactDetails = [
   {
@@ -26,6 +22,12 @@ const contactDetails = [
     href: 'tel:+971522108668',
   },
   {
+    icon: Phone,
+    label: 'Alternate',
+    value: '+91 8928726590',
+    href: 'tel:+918928726590',
+  },
+  {
     icon: MapPin,
     label: 'Location',
     value: 'Dubai, UAE',
@@ -34,7 +36,6 @@ const contactDetails = [
 ];
 
 export default function Contact() {
-  const sectionRef = useRef<HTMLElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,7 +47,6 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     toast.success('Message sent! I\'ll get back to you soon.');
@@ -56,15 +56,12 @@ export default function Contact() {
 
   return (
     <section 
-      ref={sectionRef} 
       id="contact"
       className="relative w-full py-20 lg:py-32 bg-gray-50"
     >
-      {/* Blueprint grid background */}
       <div className="absolute inset-0 blueprint-grid opacity-30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Section Header */}
         <div className="reveal text-center mb-16">
           <p className="label-mono mb-4">Get In Touch</p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -76,9 +73,7 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left: Contact details */}
           <div className="reveal space-y-6">
             <p className="label-mono mb-4">Contact Information</p>
             
@@ -87,7 +82,7 @@ export default function Contact() {
                 const Icon = detail.icon;
                 return (
                   <a 
-                    key={detail.label}
+                    key={detail.label + detail.value}
                     href={detail.href}
                     className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-indigo-300 hover:shadow-md transition-all duration-300 group"
                   >
@@ -107,10 +102,9 @@ export default function Contact() {
               })}
             </div>
 
-            {/* Download Resume */}
             <div className="pt-4">
               <a 
-                href={`${import.meta.env.BASE_URL}Zaheen_Parkar_Resume.pdf`}
+                href="/Zaheen_Parkar_Resume.pdf"
                 download
                 className="flex items-center justify-center gap-2 w-full p-4 bg-white rounded-xl border border-gray-100 hover:border-indigo-300 hover:shadow-md transition-all duration-300"
               >
@@ -119,7 +113,6 @@ export default function Contact() {
               </a>
             </div>
 
-            {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-4 pt-4">
               {[
                 { label: 'Experience', value: '11+ Years' },
@@ -134,7 +127,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right: Form */}
           <div className="reveal">
             <p className="label-mono mb-4">Send a Message</p>
             
@@ -211,7 +203,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Footer */}
       <footer className="mt-20 pt-8 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
