@@ -43,15 +43,51 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+    
+  //   await new Promise(resolve => setTimeout(resolve, 1000));
+    
+  //   toast.success('Message sent! I\'ll get back to you soon.');
+  //   setFormData({ name: '', email: '', message: '' });
+  //   setIsSubmitting(false);
+  // };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast.success('Message sent! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      // Send the form data to Web3Forms
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "990de20e-324b-4436-977c-cbe483cc5771", // Replace with your key from the email
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: "New Contact Form Submission from Portfolio", // Optional subject line
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success('Message sent! I\'ll get back to you soon.');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast.error('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      toast.error('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
