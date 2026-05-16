@@ -116,7 +116,7 @@ export default function FreelanceOffer() {
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
                 <img 
-                  src="/cta-workspace.jpg" 
+                  src="/myportfolio/cta-workspace.jpg" 
                   alt="Workspace" 
                   className="w-full h-full object-cover"
                 />

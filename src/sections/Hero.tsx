@@ -153,7 +153,7 @@ export default function Hero() {
                 {/* Portrait */}
                 <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
                   <img 
-                    src="/zaheen-portrait.png" 
+                    src="/myportfolio/zaheen-portrait.png" 
                     alt="Zaheen Parkar" 
                     className="w-full h-full object-cover object-top"
                     style={{ filter: 'contrast(1.05)' }}

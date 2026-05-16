@@ -98,7 +98,7 @@ export default function About() {
           <div className="reveal space-y-8">
             <div className="relative w-full aspect-[4/3] max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl shadow-xl">
               <img 
-                src="/zaheen-portrait.png" 
+                src="/myportfolio/zaheen-portrait.png" 
                 alt="Zaheen Parkar" 
                 className="w-full h-full object-cover object-top"
                 style={{ filter: 'contrast(1.05)' }}

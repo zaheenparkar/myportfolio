@@ -91,7 +91,7 @@ export default function Testimonials() {
         style={{ opacity: 0 }}
       >
         <img 
-          src="/testimonial-meeting.jpg" 
+          src="/myportfolio/testimonial-meeting.jpg" 
           alt="Team meeting" 
           className="w-full h-full object-cover image-grade"
         />
