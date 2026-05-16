@@ -122,7 +122,7 @@ export default function Hero() {
                   Get In Touch
                 </button>
                 <a 
-                  href="/Zaheen_Parkar_Resume.pdf"
+                  href="/myportfolio/Zaheen_Parkar_Resume.pdf"
                   download
                   className="btn-secondary flex items-center gap-2 w-full sm:w-auto justify-center"
                 >
